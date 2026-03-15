@@ -130,7 +130,9 @@ http://10.0.2.2:8000
 
 # 📸 Screenshots
 
-![img.png](img.png)
+![Ai Assistant Chat Screen](screenshots/Screenshot_20260315_083832.png)
+![Ai Generating Response](screenshots/Screenshot_20260315_091120.png)
+![Ai Answer](screenshots/Screenshot_20260315_091141.png)
 
 ---
 
