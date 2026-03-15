@@ -40,6 +40,8 @@ AI Response
 
 The system retrieves relevant questions from a dataset and sends them as context to the LLM to generate better answers.
 
+![Architecture Diagram.png](screenshots/Architecture%20Diagram.png)
+
 ---
 
 # 🛠 Tech Stack
