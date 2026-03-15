@@ -1,5 +1,6 @@
 package com.mathan.aiapplication.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mathan.aiapplication.data.repository.AiRepository
@@ -9,6 +10,7 @@ import com.mathan.aiapplication.redux.ai.AiMiddleware
 import com.mathan.aiapplication.redux.ai.AiState
 import com.mathan.aiapplication.redux.ai.reducer
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -28,7 +30,8 @@ class AiViewModel @Inject constructor(
     val state: StateFlow<AiState> = store.state
 
     fun dispatch(action: AiAction) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
+            Log.d("AiViewModel", "Current thread: ${Thread.currentThread().name}")
             store.dispatch(action)
         }
     }
