@@ -1,0 +1,222 @@
+[
+  {
+    "id": 1,
+    "question": "Two Sum",
+    "topic": "Arrays",
+    "difficulty": "Easy",
+    "description": "Given an array of integers and a target value, return the indices of two numbers that add up to the target.",
+    "hint": "Use a HashMap to store previously seen numbers.",
+    "solution": "Iterate through the array and check if target minus current number exists in the map.",
+    "time_complexity": "O(n)",
+    "space_complexity": "O(n)"
+  },
+  {
+    "id": 2,
+    "question": "Maximum Subarray",
+    "topic": "Arrays",
+    "difficulty": "Easy",
+    "description": "Find the contiguous subarray with the largest sum.",
+    "hint": "Use Kadane's algorithm.",
+    "solution": "Track current sum and maximum sum while iterating.",
+    "time_complexity": "O(n)",
+    "space_complexity": "O(1)"
+  },
+  {
+    "id": 3,
+    "question": "Remove Duplicates from Sorted Array",
+    "topic": "Arrays",
+    "difficulty": "Easy",
+    "description": "Remove duplicates from a sorted array in-place.",
+    "hint": "Use two pointers.",
+    "solution": "Maintain slow and fast pointers to overwrite duplicates.",
+    "time_complexity": "O(n)",
+    "space_complexity": "O(1)"
+  },
+  {
+    "id": 4,
+    "question": "Move Zeroes",
+    "topic": "Arrays",
+    "difficulty": "Easy",
+    "description": "Move all zeroes to the end while maintaining order of non-zero elements.",
+    "hint": "Use two pointers.",
+    "solution": "Shift non-zero values forward and fill remaining with zeros.",
+    "time_complexity": "O(n)",
+    "space_complexity": "O(1)"
+  },
+  {
+    "id": 5,
+    "question": "Best Time to Buy and Sell Stock",
+    "topic": "Arrays",
+    "difficulty": "Easy",
+    "description": "Find the maximum profit from a single buy and sell operation.",
+    "hint": "Track minimum price while iterating.",
+    "solution": "Update min price and calculate max profit.",
+    "time_complexity": "O(n)",
+    "space_complexity": "O(1)"
+  },
+  {
+    "id": 6,
+    "question": "Valid Anagram",
+    "topic": "Strings",
+    "difficulty": "Easy",
+    "description": "Check if two strings are anagrams of each other.",
+    "hint": "Use frequency counting.",
+    "solution": "Count characters using hashmap or array.",
+    "time_complexity": "O(n)",
+    "space_complexity": "O(1)"
+  },
+  {
+    "id": 7,
+    "question": "Reverse String",
+    "topic": "Strings",
+    "difficulty": "Easy",
+    "description": "Reverse a string in-place.",
+    "hint": "Use two pointers.",
+    "solution": "Swap characters from start and end moving inward.",
+    "time_complexity": "O(n)",
+    "space_complexity": "O(1)"
+  },
+  {
+    "id": 8,
+    "question": "First Unique Character",
+    "topic": "Strings",
+    "difficulty": "Easy",
+    "description": "Find the index of the first non-repeating character.",
+    "hint": "Use frequency counting.",
+    "solution": "Count occurrences and iterate again to find first unique.",
+    "time_complexity": "O(n)",
+    "space_complexity": "O(1)"
+  },
+  {
+    "id": 9,
+    "question": "Palindrome String",
+    "topic": "Strings",
+    "difficulty": "Easy",
+    "description": "Check whether a string is a palindrome.",
+    "hint": "Use two pointers.",
+    "solution": "Compare characters from both ends.",
+    "time_complexity": "O(n)",
+    "space_complexity": "O(1)"
+  },
+  {
+    "id": 10,
+    "question": "Longest Common Prefix",
+    "topic": "Strings",
+    "difficulty": "Easy",
+    "description": "Find the longest common prefix among an array of strings.",
+    "hint": "Compare characters column-wise.",
+    "solution": "Iterate through characters of first string and compare with others.",
+    "time_complexity": "O(n*m)",
+    "space_complexity": "O(1)"
+  },
+  {
+    "id": 11,
+    "question": "Valid Parentheses",
+    "topic": "Stack",
+    "difficulty": "Easy",
+    "description": "Determine if a string of brackets is valid.",
+    "hint": "Use a stack.",
+    "solution": "Push opening brackets and match closing ones.",
+    "time_complexity": "O(n)",
+    "space_complexity": "O(n)"
+  },
+  {
+    "id": 12,
+    "question": "Min Stack",
+    "topic": "Stack",
+    "difficulty": "Easy",
+    "description": "Design a stack that supports push, pop, and retrieving minimum element.",
+    "hint": "Maintain another stack for minimums.",
+    "solution": "Track minimum values in parallel stack.",
+    "time_complexity": "O(1)",
+    "space_complexity": "O(n)"
+  },
+  {
+    "id": 13,
+    "question": "Implement Queue using Stacks",
+    "topic": "Queue",
+    "difficulty": "Easy",
+    "description": "Implement queue using two stacks.",
+    "hint": "Use one stack for enqueue and one for dequeue.",
+    "solution": "Reverse stack order when dequeuing.",
+    "time_complexity": "O(n)",
+    "space_complexity": "O(n)"
+  },
+  {
+    "id": 14,
+    "question": "Binary Search",
+    "topic": "Searching",
+    "difficulty": "Easy",
+    "description": "Search a target value in a sorted array.",
+    "hint": "Divide the search space in half.",
+    "solution": "Compare middle element and adjust bounds.",
+    "time_complexity": "O(log n)",
+    "space_complexity": "O(1)"
+  },
+  {
+    "id": 15,
+    "question": "Find Peak Element",
+    "topic": "Arrays",
+    "difficulty": "Easy",
+    "description": "Find an element greater than its neighbors.",
+    "hint": "Binary search approach works.",
+    "solution": "Compare middle element with neighbors.",
+    "time_complexity": "O(log n)",
+    "space_complexity": "O(1)"
+  },
+  {
+    "id": 16,
+    "question": "Climbing Stairs",
+    "topic": "Dynamic Programming",
+    "difficulty": "Easy",
+    "description": "Find number of ways to reach top with 1 or 2 steps.",
+    "hint": "Fibonacci pattern.",
+    "solution": "Use DP where dp[i] = dp[i-1] + dp[i-2].",
+    "time_complexity": "O(n)",
+    "space_complexity": "O(n)"
+  },
+  {
+    "id": 17,
+    "question": "Fibonacci Number",
+    "topic": "Dynamic Programming",
+    "difficulty": "Easy",
+    "description": "Return nth Fibonacci number.",
+    "hint": "Use DP or iteration.",
+    "solution": "Iteratively compute previous two values.",
+    "time_complexity": "O(n)",
+    "space_complexity": "O(1)"
+  },
+  {
+    "id": 18,
+    "question": "Merge Two Sorted Lists",
+    "topic": "Linked List",
+    "difficulty": "Easy",
+    "description": "Merge two sorted linked lists.",
+    "hint": "Use two pointers.",
+    "solution": "Compare nodes and append smaller one.",
+    "time_complexity": "O(n+m)",
+    "space_complexity": "O(1)"
+  },
+  {
+    "id": 19,
+    "question": "Linked List Cycle",
+    "topic": "Linked List",
+    "difficulty": "Easy",
+    "description": "Detect if a linked list has a cycle.",
+    "hint": "Use fast and slow pointers.",
+    "solution": "If pointers meet, cycle exists.",
+    "time_complexity": "O(n)",
+    "space_complexity": "O(1)"
+  },
+  {
+    "id": 20,
+    "question": "Middle of Linked List",
+    "topic": "Linked List",
+    "difficulty": "Easy",
+    "description": "Find the middle node.",
+    "hint": "Use slow and fast pointer.",
+    "solution": "Fast pointer moves twice speed.",
+    "time_complexity": "O(n)",
+    "space_complexity": "O(1)"
+  }
+]
