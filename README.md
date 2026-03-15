@@ -130,9 +130,7 @@ http://10.0.2.2:8000
 
 # 📸 Screenshots
 
-| Home            | Response         |
-| --------------- | ---------------- |
-| App Home Screen | AI Answer Screen |
+![img.png](img.png)
 
 ---
 
