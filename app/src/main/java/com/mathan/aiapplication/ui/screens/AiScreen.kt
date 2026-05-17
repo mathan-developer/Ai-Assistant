@@ -35,7 +35,7 @@ fun AiScreen(viewModel: AiViewModel = hiltViewModel()) {
     
     AiContent(
         state = state,
-        onAskQuestion = { viewModel.askQuestion(it) },
+        onAskQuestion = { viewModel.dispatch(AiAction.AskQuestion(it)) },
         onClear = { viewModel.dispatch(AiAction.ClearAnswer()) }
     )
 }

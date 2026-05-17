@@ -35,8 +35,4 @@ class AiViewModel @Inject constructor(
             store.dispatch(action)
         }
     }
-
-    fun askQuestion(question: String) {
-        dispatch(AiAction.AskQuestion(question))
-    }
 }
