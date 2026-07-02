@@ -10,8 +10,10 @@ class AiMiddleware(private val repository: AiRepository) : Middleware<AiState> {
         when (action) {
             is AiAction.AskQuestion -> {
                 try {
-                    val response = repository.askQuestion(action.question)
-                    store.dispatch(AiAction.AnswerReceived(response.answer))
+                    repository.askQuestionStream(action.question).collect { token ->
+                        store.dispatch(AiAction.AnswerToken(token))
+                    }
+                    store.dispatch(AiAction.StreamCompleted)
                 } catch (e: Exception) {
                     store.dispatch(AiAction.Error(e.message ?: "Unknown Error"))
                 }

@@ -1,33 +1,38 @@
-from sentence_transformers import SentenceTransformer
 import json
+import sys
+from pathlib import Path
 
-# load embedding model
-model = SentenceTransformer("all-MiniLM-L6-v2")
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-# load dataset
-with open("dataset/questions.json", "r") as f:
+from retrieval import EMBEDDINGS_PATH, QUESTIONS_PATH, get_model
+
+model = get_model()
+
+with open(QUESTIONS_PATH, "r") as f:
     data = json.load(f)
 
-embeddings = []
-
-for item in data:
-
-    text = f"""
+texts = [
+    f"""
     Problem: {item['question']}
     Description: {item['description']}
     Hint: {item['hint']}
     """
+    for item in data
+]
 
-    vector = model.encode(text)
+# Encode the whole dataset in one batched call instead of one-by-one.
+vectors = model.encode(texts)
 
-    embeddings.append({
+embeddings = [
+    {
         "id": item["id"],
         "question": item["question"],
-        "embedding": vector.tolist()
-    })
+        "embedding": vector.tolist(),
+    }
+    for item, vector in zip(data, vectors)
+]
 
-# save embeddings
-with open("dataset/embeddings.json", "w") as f:
+with open(EMBEDDINGS_PATH, "w") as f:
     json.dump(embeddings, f)
 
 print("Embeddings generated successfully!")

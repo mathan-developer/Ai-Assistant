@@ -12,7 +12,8 @@ data class AiState(
 val reducer: Reducer<AiState> = { state, action ->
     when (action) {
         is AiAction.AskQuestion -> state.copy(isLoading = true, error = null, answer = "")
-        is AiAction.AnswerReceived -> state.copy(isLoading = false, answer = action.answer)
+        is AiAction.AnswerToken -> state.copy(answer = state.answer + action.token)
+        is AiAction.StreamCompleted -> state.copy(isLoading = false)
         is AiAction.Error -> state.copy(isLoading = false, error = action.message)
         is AiAction.ClearAnswer -> state.copy(answer = "")
         else -> state

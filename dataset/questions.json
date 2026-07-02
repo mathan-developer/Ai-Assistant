@@ -218,5 +218,16 @@
     "solution": "Fast pointer moves twice speed.",
     "time_complexity": "O(n)",
     "space_complexity": "O(1)"
+  },
+  {
+    "id": 21,
+    "question": "Weather Today",
+    "topic": "Weather",
+    "difficulty": "Easy",
+    "description": "Get the current weather conditions and temperature for today.",
+    "hint": "Call a weather API for the user's location.",
+    "solution": "Fetch from a weather service (e.g. OpenWeatherMap) and return today's forecast.",
+    "time_complexity": "N/A",
+    "space_complexity": "N/A"
   }
 ]

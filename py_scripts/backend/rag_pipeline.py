@@ -1,50 +1,15 @@
-import json
-import numpy as np
-import requests
-from sentence_transformers import SentenceTransformer
+import sys
+from pathlib import Path
 
-model = SentenceTransformer("all-MiniLM-L6-v2")
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-with open("dataset/embeddings.json", "r") as f:
-    embeddings_data = json.load(f)
-
-def cosine_similarity(a, b):
-    return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
-
-def search(query, top_k=3):
-
-    query_embedding = model.encode(query)
-
-    scores = []
-
-    for item in embeddings_data:
-        stored_embedding = np.array(item["embedding"])
-        similarity = cosine_similarity(query_embedding, stored_embedding)
-
-        scores.append((item["question"], similarity))
-
-    scores.sort(key=lambda x: x[1], reverse=True)
-
-    return scores[:top_k]
-
-def ask_llm(prompt):
-
-    response = requests.post(
-        "http://localhost:11434/api/generate",
-        json={
-            "model": "mistral",
-            "prompt": prompt,
-            "stream": False
-        }
-    )
-
-    return response.json()["response"]
+from retrieval import ask_llm, search
 
 query = input("Ask your question: ")
 
 results = search(query)
 
-context = "\n".join([r[0] for r in results])
+context = "\n".join(question for question, _ in results)
 
 prompt = f"""
 You are a technical interviewer.
@@ -58,7 +23,11 @@ Question:
 Explain clearly.
 """
 
-answer = ask_llm(prompt)
+try:
+    answer = ask_llm(prompt)
+except RuntimeError as exc:
+    print(f"\nError: {exc}")
+    sys.exit(1)
 
 print("\nAI Answer:\n")
 print(answer)
